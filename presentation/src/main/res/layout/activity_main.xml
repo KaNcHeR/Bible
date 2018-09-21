@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="dofam.in.bible.presentation.main.views.MainActivity">
+
+    <dofam.in.bible.presentation.custom.SlidingPaneLayout
+        android:id="@+id/sliding_pane_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/chapter_recycler_view"
+            android:layout_width="240dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"
+            android:text="3wrefgertertewrtewrtewrt" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+        <!--<TextView-->
+            <!--android:id="@+id/textview"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:lineSpacingExtra="2dp"-->
+            <!--android:paddingStart="8dp"-->
+            <!--android:paddingEnd="8dp"-->
+            <!--android:text="2 Земля же была безвидна и пуста, и тьма над бездною, и Дух Божий носился над водою.\n\n2 И сказал Бог: да будет свет. И стал свет.\n\n28 И благословил их Бог, и сказал им Бог: плодитесь и размножайтесь, и наполняйте землю, и обладайте ею, и владычествуйте над рыбами морскими, и над птицами небесными, и над всяким животным, пресмыкающимся по земле.-->
+<!--\n\n2 Земля же была безвидна и пуста, и тьма над бездною, и Дух Божий носился над водою.\n\n2 И сказал Бог: да будет свет. И стал свет.\n\n28 И благословил их Бог, и сказал им Бог: плодитесь и размножайтесь, и наполняйте землю, и обладайте ею, и владычествуйте над рыбами морскими, и над птицами небесными, и над всяким животным, пресмыкающимся по земле.-->
+<!--\n\n2 Земля же была безвидна и пуста, и тьма над бездною, и Дух Божий носился над водою.\n\n2 И сказал Бог: да будет свет. И стал свет.\n\n28 И благословил их Бог, и сказал им Бог: плодитесь и размножайтесь, и наполняйте землю, и обладайте ею, и владычествуйте над рыбами морскими, и над птицами небесными, и над всяким животным, пресмыкающимся по земле."-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textSize="18sp" />-->
+    <!--</ScrollView>-->
+
+    </dofam.in.bible.presentation.custom.SlidingPaneLayout>
+
+</LinearLayout>

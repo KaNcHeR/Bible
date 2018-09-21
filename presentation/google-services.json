@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "72196197050",
+    "firebase_url": "https://bible-cc566.firebaseio.com",
+    "project_id": "bible-cc566",
+    "storage_bucket": "bible-cc566.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72196197050:android:499df3c149706142",
+        "android_client_info": {
+          "package_name": "in.dofam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72196197050-mjok1qcrj5ue1nmvnmljk1q8524r6346.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.dofam",
+            "certificate_hash": "3b3aeeaa1db8a8112354685346b28c3034e4a056"
+          }
+        },
+        {
+          "client_id": "72196197050-rj0opsr3itj84bp66503he9tl4img0hn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8rCjUQNroRRnidQhQxI04mvou_xPUbP0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "72196197050-rj0opsr3itj84bp66503he9tl4img0hn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

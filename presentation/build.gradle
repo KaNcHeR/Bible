@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+def AAVersion = '4.3.1'
+
+android {
+
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration.getAt("androidCompileSdkVersion")
+
+
+
+    defaultConfig {
+        minSdkVersion globalConfiguration.getAt("androidMinSdkVersion")
+        targetSdkVersion globalConfiguration.getAt("androidTargetSdkVersion")
+
+        applicationId globalConfiguration.getAt("androidApplicationId")
+        versionCode globalConfiguration.getAt("androidVersionCode")
+        versionName globalConfiguration.getAt("androidVersionName")
+        testInstrumentationRunner globalConfiguration.getAt("testInstrumentationRunner")
+        testApplicationId globalConfiguration.getAt("testApplicationId")
+
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = false
+                arguments = ["resourcePackageName": globalConfiguration.getAt("androidApplicationId"),
+                             //"logLevel"           : "TRACE",
+                             "logAppenderConsole" : "true"]
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+
+    lintOptions {
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+        disable 'InvalidPackage'            //Some libraries have issues with this.
+        disable 'OldTargetApi'
+        //Lint gives this warning but SDK 20 would be Android L Beta.
+        disable 'IconDensities'             //For testing purpose. This is safe to remove.
+        disable 'IconMissingDensityFolder'  //For testing purpose. This is safe to remove.
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+    buildToolsVersion '27.0.3'
+}
+
+
+dependencies {
+    def presentationDependencies = rootProject.ext.presentationDependencies
+    def presentationTestDependencies = rootProject.ext.presentationTestDependencies
+    def developmentDependencies = rootProject.ext.developmentDependencies
+
+    compile project(':domain')
+    compile project(':data')
+
+    annotationProcessor presentationDependencies.daggerCompiler
+    implementation presentationDependencies.dagger
+    implementation presentationDependencies.butterKnife
+    implementation presentationDependencies.recyclerView
+    implementation presentationDependencies.rxJava
+    implementation presentationDependencies.rxAndroid
+    provided presentationDependencies.javaxAnnotation
+
+    androidTestCompile presentationTestDependencies.mockito
+    androidTestCompile presentationTestDependencies.dexmaker
+    androidTestCompile presentationTestDependencies.dexmakerMockito
+    androidTestCompile presentationTestDependencies.espresso
+    androidTestCompile presentationTestDependencies.testingSupportLib
+
+    //Development
+    compile developmentDependencies.leakCanary
+
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
+    implementation "org.androidannotations:androidannotations-api:$AAVersion"
+}
+
+
+//apply plugin: 'com.google.gms.google-services'
